@@ -55,6 +55,9 @@ body {
     display: none;
 }
 
-/* *** TESTS *** */
-/* CALENDAR TEST */
+/* *** TESTS PROJECTS *** */
+/* CALENDAR */
 
+#calendarBody {
+    background: white;
+}
