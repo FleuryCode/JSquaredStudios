@@ -1,0 +1,60 @@
+body {
+    background-image: linear-gradient(rgb(23, 28, 32), rgb(91, 98, 121));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.text-container {
+    color: rgb(172, 172, 172);
+}
+
+.main-container img {
+    width: 20%;
+    height: auto;
+    margin-top: 4%;
+}
+
+.main-form {
+    padding: 4%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.main-form input,
+.main-form textarea {
+    width: 100%;
+    border-radius: 12px;
+    padding: 1%;
+    border: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main-form input:focus,
+.main-form textarea:focus {
+    outline: rgb(245, 177, 52) 2px solid;
+}
+
+.contact-form-button {
+    width: 80%;
+    height: 40px;
+    border: none;
+    background-color: rgb(245, 177, 52);
+    border-radius: 20px;
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s;
+}
+
+.contact-form-button:hover,
+.contact-form-button:active {
+    background-color: rgb(247, 213, 150);
+}
+
+#mainForm {
+    display: none;
+}
+
+/* *** TESTS *** */
+/* CALENDAR TEST */
+
