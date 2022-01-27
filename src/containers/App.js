@@ -4,8 +4,10 @@ import Navbar from '../components/Navbar/Navbar';
 import HeaderImage from '../components/HeaderImage/HeaderImage';
 
 
+
 class App extends React.Component {
   render() {
+    
     return (
       <div className='pa-3 App'>
         <Navbar/>

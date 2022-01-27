@@ -1,27 +1,15 @@
-.navbar {
-   display: flex;
-   flex-direction: row; 
-   align-items: center;
-   padding: 0 5%;
-   font-size: 200%;
-   max-width: 100%;
-}
-
-.navbar h4 {
-    margin-right: auto;
-}
-
 .navlinks {
-    margin-right: 12%;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .navlinks a:link,
 .navlinks a:visited {
     text-decoration: none;
     color: white;
-    padding: 0 1%;
-    font-size: 80%;
-    margin: 0 4%;
+    font-size: 150%;
+    padding: 0 4%;
     transition: color 0.4s;
 }
 
