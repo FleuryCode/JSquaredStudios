@@ -5,14 +5,14 @@ import TestImage2 from './colorfulBrunch.jpg';
 import TestImage3 from './comSandwich.jpg';
 
 let scrollValue = 1;
-window.addEventListener('wheel', function (e) {
-    if (e.deltaY < 0) {
+window.addEventListener('mousewheel', function (e) {
+    if (e.deltaY / 120 > 0) {
         if (scrollValue === 3) {
             scrollValue = 1;
         } else {
             scrollValue++;
         }
-    } else if (e.deltaY > 0) {
+    } else {
         if (scrollValue === 1) {
             scrollValue = 3;
         } else {
