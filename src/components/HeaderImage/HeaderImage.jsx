@@ -9,7 +9,7 @@ import TestImage3 from './comSandwich.jpg';
 let index = 1;
 let endAnim = true;
 
-const mouseWheelUp = () => {
+const mouseWheelDown = () => {
     endAnim = false;
     document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
     document.getElementById('heroImage-' + (index + 1)).classList.remove('mainImageDisplay');
@@ -18,7 +18,7 @@ const mouseWheelUp = () => {
     }, 800);
 }
 
-const mouseWheelDown = () => {
+const mouseWheelUp = () => {
     endAnim = false;
     document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
     document.getElementById('heroImage-' + (index - 1)).classList.remove('mainImageDisplay');
@@ -40,7 +40,7 @@ document.body.addEventListener('wheel', function (e) {
                 }, 800);
             } else {
                 index++;
-                mouseWheelDown();
+                mouseWheelUp();
             }
         } else {
             if (index === 1) {
@@ -53,7 +53,7 @@ document.body.addEventListener('wheel', function (e) {
                 }, 800);
             } else {
                 index--;
-                mouseWheelUp();
+                mouseWheelDown();
             }
         }
     }

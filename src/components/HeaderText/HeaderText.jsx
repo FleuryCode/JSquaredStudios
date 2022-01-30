@@ -4,7 +4,7 @@ import './HeaderText.css';
 let index = 1;
 let endAnim = true;
 
-const mouseWheelUp = () => {
+const mouseWheelDown = () => {
     endAnim = false;
     document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
     document.getElementById('mainHeader-' + (index + 1)).classList.remove('mainHeaderDisplay');
@@ -13,7 +13,7 @@ const mouseWheelUp = () => {
     }, 800);
 }
 
-const mouseWheelDown = () => {
+const mouseWheelUp = () => {
     endAnim = false;
     document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
     document.getElementById('mainHeader-' + (index - 1)).classList.remove('mainHeaderDisplay');
@@ -35,7 +35,7 @@ document.body.addEventListener('wheel', function (e) {
                 }, 800);
             } else {
                 index++;
-                mouseWheelDown();
+                mouseWheelUp();
             }
         } else {
             if (index === 1) {
@@ -48,7 +48,7 @@ document.body.addEventListener('wheel', function (e) {
                 }, 800);
             } else {
                 index--;
-                mouseWheelUp();
+                mouseWheelDown();
             }
         }
     }
