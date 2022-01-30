@@ -63,7 +63,6 @@ const HeaderImage = () => {
     return (
         <div className='container-fluid'>
             <div className="row">
-                <button>Test</button>
                 <div className="col-12 imageContainer">
                     <img id='heroImage-1' className='mainImage mainImageDisplay' src={TestImage} alt="Testing" />
                     <img id='heroImage-2' className='mainImage' src={TestImage2} alt="Testing" />
