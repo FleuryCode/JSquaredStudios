@@ -47,7 +47,7 @@ document.body.addEventListener('wheel', function (e) {
                 index = 1;
                 endAnim = false;
                 document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
-                document.getElementById('heroImage-' + (index + 2)).classList.remove('mainImageDisplay'); //index + 2 for when index === 3
+                document.getElementById('heroImage-' + (index + 2)).classList.remove('mainImageDisplay');
                 setTimeout(() => {
                     endAnim = true;
                 }, 800);

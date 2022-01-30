@@ -1,0 +1,19 @@
+.headerTextMain {
+    display: flex;
+    flex-direction: column;
+    margin-top: 36%;
+}
+
+.mainHeader {
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 10;
+    width: 28vw;
+}
+
+.mainHeaderDisplay {
+    opacity: 1;
+    transition: opacity 1s;
+}
+

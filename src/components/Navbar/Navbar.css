@@ -1,3 +1,7 @@
+.mainNavigation h4 {
+    text-align: center;
+    font-size: 200%;
+}
 .navlinks {
     display: flex;
     justify-content: flex-end;

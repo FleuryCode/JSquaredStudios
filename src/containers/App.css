@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   color: rgb(231, 231, 231);
   font-family: 'Roboto', sans-serif;
   height: 100vh;
@@ -7,10 +6,5 @@
   overflow: hidden;
 }
 
-.headerText {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
 
 
