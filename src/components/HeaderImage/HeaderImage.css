@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+    right: 0;
+    margin-right: 4%;
 }
 
 .mainImage {

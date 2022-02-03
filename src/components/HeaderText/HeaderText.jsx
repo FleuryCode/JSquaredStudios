@@ -56,7 +56,7 @@ document.body.addEventListener('wheel', function (e) {
 
 const HeaderText = () => {
     return (
-        <div className="headerTextMain p-5">
+        <div className="headerTextMain">
             <div id="mainHeader-1" className="mainHeader mainHeaderDisplay">
                 <h1>Hello World One</h1>
                 <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam illum quos nesciunt dicta doloremque itaque tenetur, cum magnam saepe at earum fuga perferendis quo unde suscipit odio, hic deserunt? Esse.</h4>

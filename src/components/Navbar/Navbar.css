@@ -8,6 +8,20 @@
 
 }
 
+.navName a:link,
+.navName a:visited {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s;
+}
+
+.navName a:hover,
+.navName a:active {
+    color: #9cc0c8;
+}
+
+
+
 .navlinks a:link,
 .navlinks a:visited {
     text-decoration: none;
