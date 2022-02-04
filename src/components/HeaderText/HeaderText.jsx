@@ -1,60 +1,61 @@
 import React from "react";
 import './HeaderText.css';
 
-let index = 1;
-let endAnim = true;
 
-const mouseWheelDown = () => {
-    endAnim = false;
-    document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
-    document.getElementById('mainHeader-' + (index + 1)).classList.remove('mainHeaderDisplay');
-    setTimeout(() => {
-        endAnim = true;
-    }, 800);
-}
-
-const mouseWheelUp = () => {
-    endAnim = false;
-    document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
-    document.getElementById('mainHeader-' + (index - 1)).classList.remove('mainHeaderDisplay');
-    setTimeout(() => {
-        endAnim = true;
-    }, 800);
-}
-
-document.body.addEventListener('wheel', function (e) {
-    if (endAnim) {
-        if (e.deltaY / 120 > 0) {
-            if (index === 3) {
-                index = 1;
-                endAnim = false;
-                document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
-                document.getElementById('mainHeader-' + (index + 2)).classList.remove('mainHeaderDisplay');
-                setTimeout(() => {
-                    endAnim = true;
-                }, 800);
-            } else {
-                index++;
-                mouseWheelUp();
-            }
-        } else {
-            if (index === 1) {
-                index = 3;
-                endAnim = false;
-                document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
-                document.getElementById('mainHeader-' + (index - 2)).classList.remove('mainHeaderDisplay');
-                setTimeout(() => {
-                    endAnim = true;
-                }, 800);
-            } else {
-                index--;
-                mouseWheelDown();
-            }
-        }
-    }
-});
 
 const HeaderText = () => {
+    let index = 1;
+    let endAnim = true;
+
+    const mouseWheelDown = () => {
+        endAnim = false;
+        document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
+        document.getElementById('mainHeader-' + (index + 1)).classList.remove('mainHeaderDisplay');
+        setTimeout(() => {
+            endAnim = true;
+        }, 800);
+    }
+
+    const mouseWheelUp = () => {
+        endAnim = false;
+        document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
+        document.getElementById('mainHeader-' + (index - 1)).classList.remove('mainHeaderDisplay');
+        setTimeout(() => {
+            endAnim = true;
+        }, 800);
+    }
+
+    document.body.addEventListener('wheel', function (e) {
+        if (endAnim) {
+            if (e.deltaY / 120 > 0) {
+                if (index === 3) {
+                    index = 1;
+                    endAnim = false;
+                    document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
+                    document.getElementById('mainHeader-' + (index + 2)).classList.remove('mainHeaderDisplay');
+                    setTimeout(() => {
+                        endAnim = true;
+                    }, 800);
+                } else {
+                    index++;
+                    mouseWheelUp();
+                }
+            } else {
+                if (index === 1) {
+                    index = 3;
+                    endAnim = false;
+                    document.getElementById('mainHeader-' + (index)).classList.add('mainHeaderDisplay');
+                    document.getElementById('mainHeader-' + (index - 2)).classList.remove('mainHeaderDisplay');
+                    setTimeout(() => {
+                        endAnim = true;
+                    }, 800);
+                } else {
+                    index--;
+                    mouseWheelDown();
+                }
+            }
+        }
+    });
     return (
         <div className="headerTextMain">
             <div id="mainHeader-1" className="mainHeader mainHeaderDisplay">

@@ -6,60 +6,61 @@ import TestImage3 from './comSandwich.jpg';
 
 
 
-let index = 1;
-let endAnim = true;
 
-const mouseWheelDown = () => {
-    endAnim = false;
-    document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
-    document.getElementById('heroImage-' + (index + 1)).classList.remove('mainImageDisplay');
-    setTimeout(() => {
-        endAnim = true;
-    }, 800);
-}
-
-const mouseWheelUp = () => {
-    endAnim = false;
-    document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
-    document.getElementById('heroImage-' + (index - 1)).classList.remove('mainImageDisplay');
-    setTimeout(() => {
-        endAnim = true;
-    }, 800);
-}
-
-document.body.addEventListener('wheel', function (e) {
-    if (endAnim) {
-        if (e.deltaY / 120 > 0) {
-            if (index === 3) {
-                index = 1;
-                endAnim = false;
-                document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
-                document.getElementById('heroImage-' + (index + 2)).classList.remove('mainImageDisplay');
-                setTimeout(() => {
-                    endAnim = true;
-                }, 800);
-            } else {
-                index++;
-                mouseWheelUp();
-            }
-        } else {
-            if (index === 1) {
-                index = 3;
-                endAnim = false;
-                document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
-                document.getElementById('heroImage-' + (index - 2)).classList.remove('mainImageDisplay');
-                setTimeout(() => {
-                    endAnim = true;
-                }, 800);
-            } else {
-                index--;
-                mouseWheelDown();
-            }
-        }
-    }
-});
 
 const HeaderImage = () => {
+    let index = 1;
+    let endAnim = true;
+
+    const mouseWheelDown = () => {
+        endAnim = false;
+        document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
+        document.getElementById('heroImage-' + (index + 1)).classList.remove('mainImageDisplay');
+        setTimeout(() => {
+            endAnim = true;
+        }, 800);
+    }
+
+    const mouseWheelUp = () => {
+        endAnim = false;
+        document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
+        document.getElementById('heroImage-' + (index - 1)).classList.remove('mainImageDisplay');
+        setTimeout(() => {
+            endAnim = true;
+        }, 800);
+    }
+
+    document.body.addEventListener('wheel', function (e) {
+        if (endAnim) {
+            if (e.deltaY / 120 > 0) {
+                if (index === 3) {
+                    index = 1;
+                    endAnim = false;
+                    document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
+                    document.getElementById('heroImage-' + (index + 2)).classList.remove('mainImageDisplay');
+                    setTimeout(() => {
+                        endAnim = true;
+                    }, 800);
+                } else {
+                    index++;
+                    mouseWheelUp();
+                }
+            } else {
+                if (index === 1) {
+                    index = 3;
+                    endAnim = false;
+                    document.getElementById('heroImage-' + (index)).classList.add('mainImageDisplay');
+                    document.getElementById('heroImage-' + (index - 2)).classList.remove('mainImageDisplay');
+                    setTimeout(() => {
+                        endAnim = true;
+                    }, 800);
+                } else {
+                    index--;
+                    mouseWheelDown();
+                }
+            }
+        }
+    });
     return (
         <div className='container-fluid'>
             <div className="row">

@@ -5,6 +5,7 @@ import {Routes, Route} from 'react-router-dom';
 import Homepage from './pages/homepage/homepage';
 import About from './pages/about/about';
 import Calendar from './pages/beta/calendar/calendar';
+import Contact from './pages/contact/contact';
 
 
 
@@ -17,6 +18,8 @@ class App extends React.Component {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/contact" element={<Contact />} />
+
 
 
           {/* Testing */}
