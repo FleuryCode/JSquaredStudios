@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
-import HeaderImage from './components/HeaderImage/HeaderImage';
-import HeaderText from './components/HeaderText/HeaderText';
 import {Routes, Route} from 'react-router-dom';
 import Homepage from './pages/homepage/homepage';
 import About from './pages/about/about';
