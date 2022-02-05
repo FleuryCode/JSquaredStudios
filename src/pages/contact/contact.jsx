@@ -4,6 +4,10 @@ import './contact.styles.scss';
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import KEYS from "../../keys";
+import CustomTextArea from "../../components/CustomTextArea/CustomTextArea";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import CustomDisplayMessage from "../../components/CustomDisplayMessage/CustomDisplayMessage";
+import CustomError from "../../components/CustomError/CustomError";
 
 class Contact extends React.Component {
     constructor(props) {
@@ -17,6 +21,7 @@ class Contact extends React.Component {
             message: '',
             messageSending: false,
             messageSent: '',
+            displayMessage: false,
             captchaToken: ''
         }
     }
@@ -42,20 +47,28 @@ class Contact extends React.Component {
         const recaptchaKey = KEYS.RECAPTCHA;
         const formSparkUrl = `https://submit-form.com/${formId}`;
         let { messageSending } = this.state;
+        
 
 
         const submitForm = async (event) => {
             const { name, email, message } = this.state;
-            event.preventDefault();
+
+            if (name != '' && email != '' && message != '') {
+                event.preventDefault();
+                this.setState({
+                    messageSending: true
+                });
+                await postSubmission();
+                this.setState({
+                    messageSending: false,
+                    displayMessage: true
+                });
+                
+            } else {
+                console.log('Fill in fields')
+            }
 
 
-            this.setState({
-                messageSending: true
-            });
-            await postSubmission();
-            this.setState({
-                messageSending: false
-            });
         };
 
         const postSubmission = async () => {
@@ -74,12 +87,15 @@ class Contact extends React.Component {
                     email: '',
                     message: '',
                     messageSending: false,
-                    messageSent: '',
+                    messageSent: 'success',
                     captchaToken: ''
                 });
                 recaptchaRef.current.reset();
             } catch (error) {
                 console.log(error);
+                this.setState({
+                    messageSent: 'failed'
+                })
             }
         };
 
@@ -96,6 +112,14 @@ class Contact extends React.Component {
                 <form className="p-5 contact-form">
                     <div className="container-fluid">
                         <div className="row">
+                            <div className="col-12">
+                                <CustomDisplayMessage
+                                    status={this.state.messageSent}
+                                    displayMessage={this.state.displayMessage}
+                                    failedMessage={'Your message could not be sent'}
+                                    successMessage={'Thank you for contacting us!'}
+                                />
+                            </div>
                             <div className="col-6">
                                 <CustomInput
                                     type="text"
@@ -119,17 +143,28 @@ class Contact extends React.Component {
                                 />
                             </div>
                             <div className="col-12">
-                                <textarea required name="message" onChange={this.handleChange} value={this.state.message} placeholder="Your message" id="message"></textarea>
+                                <CustomTextArea
+                                    id="message"
+                                    name="message"
+                                    value={this.state.message}
+                                    placeholder="Your message"
+                                    handleChange={this.handleChange}
+                                    required
+                                />
                             </div>
-
-                            <ReCAPTCHA
-                                ref={recaptchaRef}
-                                sitekey={recaptchaKey}
-                                onChange={updateRecaptchToken}
-                            />
-
+                            <div className="col-12 mb-3">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey={recaptchaKey}
+                                    onChange={updateRecaptchToken}
+                                />
+                            </div>
                             <div className="col-4">
-                                <button disabled={messageSending} type="submit" onClick={submitForm}>{messageSending ? 'Sending message...' : 'Submit'}</button>
+                                <CustomButton
+                                    type="submit"
+                                    messageSending={messageSending}
+                                    handleSubmit={submitForm}
+                                />
                             </div>
                         </div>
                     </div>
