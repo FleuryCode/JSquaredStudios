@@ -7,7 +7,6 @@ import KEYS from "../../keys";
 import CustomTextArea from "../../components/CustomTextArea/CustomTextArea";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomDisplayMessage from "../../components/CustomDisplayMessage/CustomDisplayMessage";
-import CustomError from "../../components/CustomError/CustomError";
 
 class Contact extends React.Component {
     constructor(props) {
@@ -26,14 +25,6 @@ class Contact extends React.Component {
         }
     }
 
-
-
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const { name, email } = this.state;
-
-    //     console.log(name, email);
-    // }
 
     handleChange = (event) => {
         const { value, name } = event.target;
