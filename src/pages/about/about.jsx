@@ -3,7 +3,7 @@ import './about.styles.scss';
 
 const About = () => {
     return(
-        <div className="about d-flex justify-content-center">
+        <div className="about d-flex flex-column text-center">
             <h1>About Page</h1>
         </div>
     );
