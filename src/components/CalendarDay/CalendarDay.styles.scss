@@ -1,0 +1,29 @@
+.calendarDayContainer {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    display: block;
+    border: none;
+    line-height: 5vw;
+    color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.isDisabled {
+    opacity: 0.4;
+    background-color: rgb(94, 94, 94);
+    cursor: default !important;
+}
+
+.notDisabled {
+    opacity: 1;
+}
+
+.hasAvailable {
+    cursor: pointer;
+    background-color: rgb(136, 185, 138);
+}
+
+.notAvailable {
+    background-color: rgb(180, 98, 98);
+}
