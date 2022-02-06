@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import './contact.styles.scss';
 import axios from "axios";
@@ -44,7 +44,7 @@ class Contact extends React.Component {
         const submitForm = async (event) => {
             const { name, email, message } = this.state;
 
-            if (name != '' && email != '' && message != '') {
+            if (name !== '' && email !== '' && message !== '') {
                 event.preventDefault();
                 this.setState({
                     messageSending: true
@@ -72,7 +72,7 @@ class Contact extends React.Component {
             };
 
             try {
-                const result = await axios.post(formSparkUrl, payload);
+                await axios.post(formSparkUrl, payload);
                 this.setState({
                     name: '',
                     email: '',
@@ -111,7 +111,7 @@ class Contact extends React.Component {
                                     successMessage={'Thank you for contacting us!'}
                                 />
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <CustomInput
                                     type="text"
                                     id="name"
@@ -122,7 +122,7 @@ class Contact extends React.Component {
                                     required
                                 />
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <CustomInput
                                     type="email"
                                     id="email"
@@ -133,7 +133,7 @@ class Contact extends React.Component {
                                     required
                                 />
                             </div>
-                            <div className="col-12">
+                            <div className="col-12 mt-3">
                                 <CustomTextArea
                                     id="message"
                                     name="message"
@@ -150,7 +150,7 @@ class Contact extends React.Component {
                                     onChange={updateRecaptchToken}
                                 />
                             </div>
-                            <div className="col-4">
+                            <div className="col-10 col-md-6 col-lg-4">
                                 <CustomButton
                                     type="submit"
                                     messageSending={messageSending}
