@@ -1,0 +1,37 @@
+.mainNavigation h4 {
+    text-align: center;
+    font-size: 200%;
+}
+.navlinks {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.navName a:link,
+.navName a:visited {
+    text-decoration: none;
+    color: white;
+    transition: color 0.4s;
+}
+
+.navName a:hover,
+.navName a:active {
+    color: #9cc0c8;
+}
+
+
+
+.navlinks a:link,
+.navlinks a:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 150%;
+    padding: 0 4%;
+    transition: color 0.4s;
+}
+
+.navlinks a:hover,
+.navlinks a:active {
+    color: #9cc0c8;
+}

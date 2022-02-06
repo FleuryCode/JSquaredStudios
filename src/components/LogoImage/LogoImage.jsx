@@ -1,6 +1,11 @@
 import React from 'react';
 import './LogoImage.css';
-import logo from '../j2logo.svg';
+import logo from '../../containers/j2logo.svg';
+
+
+
+
+
 
 const LogoImage = () => {
     return (

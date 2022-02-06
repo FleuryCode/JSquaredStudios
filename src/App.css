@@ -1,0 +1,10 @@
+.App {
+  color: rgb(231, 231, 231);
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
