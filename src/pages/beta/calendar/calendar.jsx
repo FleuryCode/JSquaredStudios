@@ -13,10 +13,10 @@ const Calendar = () => {
                 <div className="col-12">
                     <h1>Calendar App Page</h1>
                 </div>
-                <div className="col-9 d-flex justify-content-center">
+                <div className="col-12 col-md-7 d-flex justify-content-center my-4 ms-4">
                 <CalendarComponent date={date} month={month} />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-md-4">
                     <h4>Testing</h4>
                 </div>
             </div>

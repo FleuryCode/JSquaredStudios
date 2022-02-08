@@ -154,7 +154,7 @@ class CalendarComponent extends React.Component {
                         <h2>{this.state.displayedMonth}</h2>
                         <button onClick={nextMonth} >Next</button>
                     </div>
-                    <div className="col-12 d-flex flex-row justify-content-center mt-5">
+                    <div className="col-12 d-flex flex-row justify-content-center mt-5 px-5">
                         <div className="dayOfWeek">
                             <p>Sun</p>
                         </div>
@@ -180,7 +180,7 @@ class CalendarComponent extends React.Component {
                 </div>
                 {/* Start of Calendar */}
                 <div className="row">
-                    <div className="col-12 days">
+                    <div className="col-12 days px-5">
                         {days.map(day => (
                             <CalendarDay key={day.id} dayNumber={day.dayNumber} isDisabled={day.isDisabled} hasAvailable={day.hasAvailable} />
                         ))}
