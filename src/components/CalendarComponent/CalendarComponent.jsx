@@ -115,6 +115,15 @@ class CalendarComponent extends React.Component {
         const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
         const nextDays = 7 - lastDayIndex - 1;
 
+        const handleDayClick = (input) => {
+            console.log(input);
+        }
+
+        const handleOffDayClick = () => {
+            console.log('Please select a valid date.')
+        }
+
+
         // Displaying Days
         let days = [];
 
@@ -124,7 +133,9 @@ class CalendarComponent extends React.Component {
                 dayNumber: (prevLastDay - x + 1),
                 isDisabled: true,
                 hasAvailable: true,
-                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(subMonths(new Date(this.state.displayedDate), 1), "MM")) + (prevLastDay - x + 1)
+                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(subMonths(new Date(this.state.displayedDate), 1), "MM")) + (prevLastDay - x + 1),
+                handleClick: handleOffDayClick
+                
             })
         }
         // Creating Regular Days Objects
@@ -133,7 +144,8 @@ class CalendarComponent extends React.Component {
                 dayNumber: i,
                 isDisabled: false,
                 hasAvailable: true,
-                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(new Date(this.state.displayedDate), "MM")) + (i)
+                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(new Date(this.state.displayedDate), "MM")) + (i),
+                handleClick: handleDayClick
             })
         }
         // Creating Next Month Days Objects
@@ -142,7 +154,8 @@ class CalendarComponent extends React.Component {
                 dayNumber: j,
                 isDisabled: true,
                 hasAvailable: true,
-                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(addMonths(new Date(this.state.displayedDate), 1), "MM")) + (j)
+                id: (format(new Date(this.state.displayedDate), "yyyy")) + (format(addMonths(new Date(this.state.displayedDate), 1), "MM")) + (j),
+                handleClick: handleOffDayClick
             })
         }
 
@@ -182,7 +195,7 @@ class CalendarComponent extends React.Component {
                 <div className="row">
                     <div className="col-12 days px-5">
                         {days.map(day => (
-                            <CalendarDay key={day.id} dayNumber={day.dayNumber} isDisabled={day.isDisabled} hasAvailable={day.hasAvailable} />
+                            <CalendarDay key={day.id} dayNumber={day.dayNumber} isDisabled={day.isDisabled} hasAvailable={day.hasAvailable} date={day.id} handleClick={day.handleClick} />
                         ))}
 
 
